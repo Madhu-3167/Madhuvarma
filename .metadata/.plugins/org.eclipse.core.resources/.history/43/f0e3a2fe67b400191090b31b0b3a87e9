@@ -1,0 +1,78 @@
+package com.ScreenShot;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Validation_Failure_Screenshot {
+
+	WebDriver driver=null;
+    String url="https://opensource-demo.orangehrmlive.com/";
+   @BeforeTest
+   public void SetUp() throws InterruptedException
+   {
+ 	 System.setProperty("webdriver.chrome.driver", "./driverFiles/chromedriver.exe");
+	 driver=new ChromeDriver();
+	 driver.get(url);
+	 driver.manage().window().maximize();
+	 //driver.manage().deleteAllCookies();
+	 //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	 //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	 Thread.sleep(4000);
+   }
+	@Test(priority=1)
+	public void LogIn() throws IOException, InterruptedException
+	   {
+	   	FileInputStream file=new FileInputStream("./src/com/Excel_Operations/Madhu.xlsx");
+	   	XSSFWorkbook workbook=new XSSFWorkbook(file);
+	   	XSSFSheet sheet=workbook.getSheet("Sheet3");
+	   	    int rows=sheet.getLastRowNum();
+	   	for(int i=1;i<=rows;i++)
+	   	{
+	   		String data=sheet.getRow(i).getCell(0).getStringCellValue();
+	   		driver.findElement(By.id("txtUsername")).sendKeys(data);
+	   	    clear();
+	   		String data1=sheet.getRow(i).getCell(1).getStringCellValue();
+			driver.findElement(By.id("txtPassword")).sendKeys(data1);
+			clear();
+			driver.findElement(By.id("btnLogin")).click();
+	    String expected_OrhmTitle="Welcome";
+		System.out.println("The title of the OhrmTitle is:"+expected_OrhmTitle);
+		WebElement actual_OhrmTitle=driver.findElement(By.linkText("Welcome Admin"));
+		String WelcomeText=actual_OhrmTitle.getText();
+		System.out.println("The title of OhrmTitle is: "+WelcomeText);
+		if(WelcomeText.contains(expected_OrhmTitle))
+		{
+			System.out.println("The title Matched-PASS");
+		}
+		else
+		{
+			System.out.println("The title not Matched-FAIL");
+		}
+		
+		driver.navigate().back();
+		//driver.findElement(By.linkText("Welcome Admin")).click();
+	   //	Thread.sleep(2000);
+		//driver.findElement(By.linkText("Logout")).click();
+	   	}
+	   	
+	}
+private void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+@AfterTest
+public void tearDown()
+{
+	 //driver.close();
+}
+}
+

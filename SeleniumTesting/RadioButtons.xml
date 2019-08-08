@@ -1,0 +1,12 @@
+<suite name="RadioButton" parallel="tests">
+   <test name="Group1">
+      <classes>
+        <class name="com.TestNG.RadioButton_Group1"/>
+      </classes>
+   </test>
+   <test name="BothGroups">
+      <classes>
+        <class name="com.TestNG.RadioButton_Both"/>
+      </classes>
+   </test>
+</suite>

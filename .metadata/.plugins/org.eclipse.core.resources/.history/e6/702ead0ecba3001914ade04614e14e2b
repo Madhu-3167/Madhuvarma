@@ -1,0 +1,26 @@
+package com.ApplicationNavigation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome_Navigate_To_OrangeHRM {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","./driverFiles/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		String expected_BingHomePageTitle="orangeHRM";
+		System.out.println("The exepected Title of the BingHomePage is:"+expected_BingHomePageTitle);
+		String actual_BingHomePageTitle=driver.getTitle();
+		System.out.println("The actual Title of the BingHomePage is:"+actual_BingHomePageTitle);
+		if(actual_BingHomePageTitle.equals(expected_BingHomePageTitle))
+		{
+			System.out.println("The Title Matched is -PASS");
+		}else
+		{
+			System.out.println("The Title Not matched is -FAIL");
+		}
+		driver.close();
+	}
+
+}

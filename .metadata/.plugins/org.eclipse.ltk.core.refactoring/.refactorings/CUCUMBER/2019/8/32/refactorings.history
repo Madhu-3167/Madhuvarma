@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Library1&apos; to &apos;MAVEN_OHRM&apos;&#x0D;&#x0A;- Original project: &apos;CUCUMBER&apos;&#x0D;&#x0A;- Destination element: &apos;MAVEN_OHRM&apos;&#x0D;&#x0A;- Original element: &apos;Library1&apos;" description="Copy folder" destination="=MAVEN_OHRM" element1="Library1" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1565085022244" units="0" version="1.0"/>
+</session>

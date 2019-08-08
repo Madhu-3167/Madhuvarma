@@ -1,0 +1,15 @@
+package com.ApplicationNavigation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome_Navigate_To_OrangeHRM {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","./driverFiles/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		driver.getTitle();
+	}
+
+}

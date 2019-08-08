@@ -1,0 +1,40 @@
+package com.OHRM.TestScripts;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+import com.OHRM_Lib.LogInKeyWords;
+
+public class LogIn_Test {
+
+@Test
+public void LogIn() throws IOException
+{
+	LogInKeyWords Keys=new LogInKeyWords();
+	FileInputStream file=new FileInputStream("./src/com/Excel_Test_DataFiles/ActionsKeywords.xlsx");
+	XSSFWorkbook workbook=new XSSFWorkbook(file);
+	XSSFSheet sheet=workbook.getSheet("Sheet4");
+	Row r=null;
+	int rowsCount=sheet.getLastRowNum();
+	for(int i=1;i<rowsCount;i++)
+	{
+		r=sheet.getRow(i);
+		String runMode=r.getCell(4).getStringCellValue();
+		if(runMode.equals("Y"))
+		{
+			String keyWord=r.getCell(3).getStringCellValue();
+			if(keyWord.equals("LaunchBrowser"))
+			{
+				
+			}
+				
+		}
+	}
+}
+}

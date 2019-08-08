@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [OHRM]">
+  <test name="Login(failed)">
+    <classes>
+      <class name="com.TestNG.OHRM_Data_Export_And_Delete">
+        <methods>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+          <include name="OHRM_EmpDataExport"/>
+        </methods>
+      </class> <!-- com.TestNG.OHRM_Data_Export_And_Delete -->
+      <class name="com.TestNG.OHRM_EmpData_Export">
+        <methods>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.TestNG.OHRM_EmpData_Export -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [OHRM] -->

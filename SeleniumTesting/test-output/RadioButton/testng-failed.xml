@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [RadioButton]" parallel="tests">
+  <test name="BothGroups(failed)" parallel="tests">
+    <classes>
+      <class name="com.TestNG.RadioButton_Both">
+        <methods>
+          <include name="SetUp"/>
+          <include name="RadioButton_Group1"/>
+        </methods>
+      </class> <!-- com.TestNG.RadioButton_Both -->
+      <class name="com.TestNG.RadioButton_Group1">
+        <methods>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.TestNG.RadioButton_Group1 -->
+    </classes>
+  </test> <!-- BothGroups(failed) -->
+  <test name="Group1(failed)" parallel="tests">
+    <classes>
+      <class name="com.TestNG.RadioButton_Both">
+        <methods>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.TestNG.RadioButton_Both -->
+      <class name="com.TestNG.RadioButton_Group1">
+        <methods>
+          <include name="RadioButton_Group1"/>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.TestNG.RadioButton_Group1 -->
+    </classes>
+  </test> <!-- Group1(failed) -->
+</suite> <!-- Failed suite [RadioButton] -->

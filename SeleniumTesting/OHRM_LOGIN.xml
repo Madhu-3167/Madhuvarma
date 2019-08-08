@@ -1,0 +1,12 @@
+<suite name="OHRM">
+   <test name="Login">
+      <classes>
+        <class name="com.TestNG.OHRM_Data_Export_And_Delete"/>
+      </classes>
+   </test>
+   <test name="EmpDataExport">
+      <classes>
+        <class name="com.TestNG.OHRM_EmpData_Export"/>
+      </classes>
+   </test>
+</suite>

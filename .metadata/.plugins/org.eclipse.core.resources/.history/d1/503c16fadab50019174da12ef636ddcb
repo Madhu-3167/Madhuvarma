@@ -1,0 +1,45 @@
+package com.NewTours.Pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class logIn_Page {
+
+	@FindBy(linkText="SIGN-ON")
+	WebElement Signon;
+	@FindBy(linkText="REGISTER")
+	WebElement register;
+	@FindBy(linkText="SUPPORT")
+	WebElement support;
+	@FindBy(linkText="CONTACT")
+	WebElement contact;
+	@FindBy(name="userName")
+	WebElement userName;
+	@FindBy(name="password")
+	WebElement password;
+	@FindBy(name="login")
+    WebElement login;	
+	
+	public void SignOn()
+	{
+		Signon.click();
+	}
+	public void Register() 
+	{
+		register.click();
+	}
+	public void Support()
+	{
+		support.click();
+	}
+	public void Contact()
+	{
+		contact.click();
+	}
+	public void Login(String uName,String pwd)
+	{
+		userName.sendKeys(uName);
+		password.sendKeys(pwd);
+	    login.click();
+	}
+}
